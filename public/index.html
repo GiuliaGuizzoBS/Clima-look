@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Clima & Look</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<main class="container">
+  <section class="temperatura">
+    <h2>Temperaturas de hoje</h2>
+     <p>Máxima: <strong><span id="tempMax">--</span>°C</strong></p>
+     <p>Mínima: <strong><span id="tempMin">--</span>°C</strong></p>
+
+
+    <div class="inputs">
+        <input type="number" id="inputMax" placeholder="Digite a máxima do dia">
+        <input type="number" id="inputMin" placeholder="Digite a mínima da noite">
+        <button onclick="aplicarTemperaturas()">Aplicar</button>
+    </div>
+
+  </section>
+
+  <section class="roupas">
+    <div class="controle">
+      <button onclick="mostrarDia()">◀</button>
+      <span id="periodo">Dia</span>
+      <button onclick="mostrarNoite()">▶</button>
+    </div>
+
+    <div class="card">
+      <div class="imagem" id="imagemCima">imagemBlusaCurta</div>
+    </div>
+
+    <div class="card">
+      <div class="imagem" id="imagemBaixo">imagemShorts</div>
+    </div>
+  </section>
+</main>
+
+<section class="info">
+  <h2>Qual a base?</h2>
+  <p>
+    As sugestões são feitas com base na temperatura máxima (dia) e mínima (noite).
+    Partes de cima variam entre regata, blusa curta, blusa longa, blusa com casaco e casaco de frio extremo.
+    Partes de baixo variam entre shorts, calça e calça quente/dupla.
+  </p>
+
+  <h2>Por que fiz o site?</h2>
+  <p>
+    Fiz este site para treinar a minha habilidade em programação, além de que gosto de me vestir bem, assim posso usar como guia para escolher a roupa certa conforme o clima.
+  </p>
+</section>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
