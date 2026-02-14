@@ -4,23 +4,55 @@ let cidade = "Manual"
 let periodo = "dia"
 
 function aplicarTemperaturas() {
-  const max = parseInt(document.getElementById("inputMax").value)
-  const min = parseInt(document.getElementById("inputMin").value)
+  const max = Number(document.getElementById("inputMax").value)
+  const min = Number(document.getElementById("inputMin").value)
 
+  const erro = document.getElementById("erro")
+  const inputMax = document.getElementById("inputMax")
+  const inputMin = document.getElementById("inputMin")
+
+  // valida campos vazios
   if (isNaN(max) || isNaN(min)) {
-    alert("Preencha a temperatura máxima e mínima.")
+    erro.style.display = "block"
+    erro.innerText = "Preencha a temperatura máxima e mínima."
+    marcarErro(inputMax, inputMin)
     return
   }
 
-  tempMax = max
-  tempMin = min
+  // valida regra: mínima não pode ser maior que máxima
+  if (min > max) {
+    erro.style.display = "block"
+    erro.innerText = "A temperatura mínima não pode ser maior que a máxima."
+    marcarErro(inputMax, inputMin)
+    return
+  }
 
-  document.getElementById("tempMax").innerText = tempMax
-  document.getElementById("tempMin").innerText = tempMin
+  // remove erro
+  erro.style.display = "none"
+  desmarcarErro(inputMax, inputMin)
+
+  document.getElementById("tempMax").innerText = max
+  document.getElementById("tempMin").innerText = min
 
   atualizarRoupas()
-  registrarNoBanco()
 }
+
+function marcarErro(inputMax, inputMin) {
+  inputMax.style.borderColor = "#f87171"
+  inputMin.style.borderColor = "#f87171"
+  inputMax.classList.add("input-erro")
+  inputMin.classList.add("input-erro")
+}
+
+function desmarcarErro(inputMax, inputMin) {
+  inputMax.style.borderColor = "rgba(148,163,184,.2)"
+  inputMin.style.borderColor = "rgba(148,163,184,.2)"
+  inputMax.classList.remove("input-erro")
+  inputMin.classList.remove("input-erro")
+}
+
+
+
 
 function roupaCima(temp) {
   if (temp < 10) return "imagemCasacoFrioExtremo"
