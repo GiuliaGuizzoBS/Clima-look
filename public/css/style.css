@@ -171,6 +171,72 @@ body {
   margin: 26px 0 10px;
 }
 
+.footer {
+  margin-top: 40px;
+  padding: 26px 16px 36px;
+  border-top: 1px solid rgba(148,163,184,.15);
+  background: linear-gradient(180deg, rgba(15,23,48,.6), rgba(11,18,32,.9));
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.footer p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,.2);
+  background: #0b1220;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.github-link img {
+  width: 20px;
+  height: 20px;
+  filter: grayscale(1) brightness(1.2);
+}
+
+.github-link:hover {
+  transform: translateY(-1px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(0,0,0,.35);
+}
+
+.github-link:active {
+  transform: translateY(0);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-4px); }

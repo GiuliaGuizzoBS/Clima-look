@@ -31,6 +31,10 @@ function aplicarTemperaturas() {
   erro.style.display = "none"
   desmarcarErro(inputMax, inputMin)
 
+  tempMax = max
+  tempMin = min
+
+
   document.getElementById("tempMax").innerText = max
   document.getElementById("tempMin").innerText = min
 
